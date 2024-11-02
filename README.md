@@ -43,6 +43,6 @@ Vous pouvez également afficher la console permet de visualiser les réponses do
 
 ## 4. Note du développeur
 
-Cette application utilise une version modifiée du code Open Source développé par Armel (F4HWN) en Java Script pour l'application RRF Remote pour plateformes M5 Stack que je remercie chaleureusement pour l'ensemble de son oeuvre pour la communauté radioamateur et son soutien.
+Cette application utilise une version modifiée du code Open Source développé par Armel (F4HWN) en Java Script pour l'application RRF Remote pour plateformes M5 Stack que je remercie chaleureusement pour l'ensemble de son oeuvre pour la communauté radioamateur ainsi que son soutien.
 
 73, David.

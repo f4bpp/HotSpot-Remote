@@ -1,4 +1,4 @@
-# F4BPP HotSpot Remote Software
+# F4BPP HotSpot Remote Android Application
 
 ## 1. Presentation de l'application
 

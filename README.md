@@ -21,8 +21,9 @@ L'application permet d'effectuer les actions suivantes :
 ## 2. Installation de l'application
 
  1. Copier le fichier **HotSPotRemote.js** dans le répertoire "root" du
-    HotSpot.
- 2. Éditer le fichier **rc.local** et ajouter les lignes suivantes :
+    HotSpot. Pour se faire, se connecter au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpotet) ou via Putty sous Windows et entrer la commande suivante :
+ >      wget -O /root/HotSpotRemote.js https://github.com/f4bpp/HotSpot-Remote/releases/download/v1.0/HotSpotRemote.js
+ 3. Éditer le fichier **rc.local** et ajouter les lignes suivantes :
 
 >     #Lancement du HotSpot Remote au démarrage
 >     nohup node /root/HotSpotRemote.js

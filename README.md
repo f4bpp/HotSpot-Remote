@@ -40,3 +40,9 @@ La première étape consiste à choisir la version du Spotnik qui correspond à 
 Dans les paramètres, vous pouvez forcer l’écran à rester allumé tant que l’application est en cours d’utilisation et en premier plan.
 
 Vous pouvez également afficher la console permet de visualiser les réponses données par le HotSpot aux requêtes de l’application. Ce paramètre est désactivé par défaut car la console n’est utile qu’au développeur pour contrôler la bonne exécution des requêtes mais elle peut être aussi intéressante pour les utilisateurs curieux.
+
+## 4. Note du développeur
+
+Cette application utilise une version modifiée du code Open Source développé par Armel (F4HWN) en Java Script pour l'application RRF Remote pour plateformes M5 Stack que je remercie chaleureusement pour l'ensemble de son oeuvre pour la communauté radioamateur et son soutien.
+
+73, David.

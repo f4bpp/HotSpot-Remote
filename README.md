@@ -23,12 +23,12 @@ L'application permet d'effectuer les actions suivantes :
     HotSpot.
  2. Éditer le fichier **rc.local** et ajouter les lignes suivantes :
 
-		**#Lancement du HotSpot Remote au démarrage
-		nohup node /root/HotSpotRemote.js**
+>     #Lancement du HotSpot Remote au démarrage
+>     nohup node /root/HotSpotRemote.js
 
- 3. Sauvegarder le fichier.
- 4. Redémarrer le HotSpot.
- 5. Télécharger le fichier APK sur votre smartphone et lancez l'installation.
+ 4. Sauvegarder le fichier.
+ 5. Redémarrer le HotSpot.
+ 6. Télécharger le fichier APK sur votre smartphone et lancez l'installation.
 
 ## 3. Réglages
 

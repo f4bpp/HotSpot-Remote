@@ -32,7 +32,7 @@ L'application permet d'effectuer les actions suivantes :
  4. Redémarrer le HotSpot.
  5. Télécharger le fichier APK sur votre smartphone via ce lien : [HotSpot_Remote_APK](APK/F4BPP_HotSpot_Remote_1_1.apk) ou bien en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
 
-![APK_QR-CODE](https://github.com/f4bpp/Icom_IC-PCR100_Remote_Software/blob/main/Images/HotSpot_Remote_APK_v1.1_QR-Code.png)
+![APK_QR-CODE](https://github.com/f4bpp/Icom_IC-PCR100_Remote_Software/blob/main/Images/HotSpot_Remote_APK_QR-Code.png)
 
 ## 3. Réglages
 

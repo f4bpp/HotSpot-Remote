@@ -30,8 +30,8 @@ L'application permet d'effectuer les actions suivantes :
 >     #Lancement du HotSpot Remote au démarrage
 >     nohup node /root/HotSpotRemote.js
 
- 3. Sauvegarder le fichier.
- 4. Afin rendre opérationnelle la lecture des bulletins METAR, connectez-vous au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
+ 4. Sauvegarder le fichier.
+ 5. Afin rendre opérationnelle la lecture des bulletins METAR, connectez-vous au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
 >     curl -s https://github.com/f4bpp/HotSpot-Remote/blob/main/METAR_Update/MetarInfo_Fix.sh | bash
  6. Redémarrer le HotSpot.
  7. Télécharger le fichier APK sur votre smartphone via ce lien : [HotSpot_Remote_APK](https://github.com/f4bpp/HotSpot-Remote/releases/download/v2.0/F4BPP_HotSpot_Remote_2.0.apk) ou bien en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.

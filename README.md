@@ -12,6 +12,7 @@ L'application permet d'effectuer les actions suivantes :
 
  - Changer de réflecteur.
  - Activer le mode "Perroquet".
+ - Lancer la lecture du bulletin météo METAR via une synthèse vocale.
  - Redémarrer le HotSpot.
  - Éteindre le HotSpot.
  - Contrôler la température du HotSpot.

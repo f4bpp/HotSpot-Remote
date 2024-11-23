@@ -3,7 +3,7 @@
 ## 1. Presentation de l'application
 ![HotSpot Remote Preview](https://github.com/f4bpp/HotSpot-Remote/blob/main/Images/HotSpot_Remote_Preview.png)
 
-Hotspot Remote est une application pour Smartphone sous Android qui permet de piloter les HotSpots de type "Spotnik" de F5NLG prévus pour fonctionner sur les réseaux numériques radioamateurs suivants:
+Hotspot Remote est une application pour Smartphone sous Android qui permet de piloter les HotSpots prévus pour fonctionner sur les réseaux numériques radioamateurs suivants:
 
  - Réseau des Répéteurs Francophones
  - Réseau interconnecté multiprotocoles du 49.

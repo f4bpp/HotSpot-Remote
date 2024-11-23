@@ -5,7 +5,7 @@
 
 Hotspot Remote est une application pour Smartphone sous Android qui permet de piloter les HotSpots prévus pour fonctionner sur les réseaux numériques radioamateurs suivants:
 
- - Réseau des Répéteurs Francophones
+ - Réseau des Répéteurs Francophones.
  - Réseau interconnecté multiprotocoles du 49.
 
 L'application permet d'effectuer les actions suivantes :

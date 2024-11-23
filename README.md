@@ -23,7 +23,8 @@ L'application permet d'effectuer les actions suivantes :
 
  1. Copier le fichier **HotSPotRemote.js** dans le répertoire "root" du
     HotSpot. Pour se faire, connectez-vous au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
- >      wget -O /root/HotSpotRemote.js https://github.com/f4bpp/HotSpot-Remote/releases/download/v1.0/HotSpotRemote.js
+ >      wget -O /root/HotSpotRemote.js https://github.com/f4bpp/HotSpot-Remote/releases/download/v2.0/HotSpotRemote.js
+
  3. Éditer le fichier **rc.local** et ajouter les lignes suivantes :
 
 >     #Lancement du HotSpot Remote au démarrage
@@ -31,7 +32,7 @@ L'application permet d'effectuer les actions suivantes :
 
  3. Sauvegarder le fichier.
  4. Redémarrer le HotSpot.
- 5. Télécharger le fichier APK sur votre smartphone via ce lien : [HotSpot_Remote_APK](https://github.com/f4bpp/HotSpot-Remote/releases/download/v1.1/F4BPP_HotSpot_Remote_1_1.apk) ou bien en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
+ 5. Télécharger le fichier APK sur votre smartphone via ce lien : [HotSpot_Remote_APK](https://github.com/f4bpp/HotSpot-Remote/releases/download/v2.0/F4BPP_HotSpot_Remote_2.0.apk) ou bien en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
 
 ![APK_QR-CODE](https://github.com/f4bpp/HotSpot-Remote/blob/main/Images/HotSpot_Remote_APK_QR-Code.png)
 

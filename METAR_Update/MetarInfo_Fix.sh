@@ -4,9 +4,7 @@
 #
 
 
-file='/etc/spotnik/svxlink.d/ModuleMetarInfo.conf'
-
-aeroport=`grep "STARTDEFAULT=" $file | sed s/STARTDEFAULT=//`
+file='/etc/spotnik/svxlink.d/ModuleMetarInfo.conf' aeroport=`grep "STARTDEFAULT=" $file | sed s/STARTDEFAULT=//`
 
 echo "Ecriture du fichier ModuleMetarInfo.conf pour l'aéroport $aeroport"
 

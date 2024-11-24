@@ -64,7 +64,6 @@ Je tiens à remercier chaleureusement les personnes suivantes pour leur soutien,
 - Hervé (F4ELD)
 - Eric (F4IGG)
 - François (F4ICM)
-- Christophe (F1IPY)
 - Yannick (F5NKP)
 
 73, David (F4BPP).

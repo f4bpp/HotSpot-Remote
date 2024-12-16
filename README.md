@@ -17,6 +17,7 @@ L'application permet d'effectuer les actions suivantes :
  - Éteindre le HotSpot.
  - Contrôler la température du HotSpot.
  - Afficher un mémento de toutes les tonalités DTMF qui permettent de contrôler le HotSpot sans l'application.
+ - Ecouter les réflecteurs via Internet.
 
 
 ## 2. Installation de l'application :

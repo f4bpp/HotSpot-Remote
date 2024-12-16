@@ -1,7 +1,7 @@
 # F4BPP HotSpot Remote Android Application
 
 ## 1. Presentation de l'application :
-![HotSpot Remote Preview](https://github.com/f4bpp/HotSpot-Remote/blob/main/Preview/HotSpot_Remote_Preview_01.jpg)
+![HotSpot Remote Preview](https://github.com/f4bpp/HotSpot-Remote/blob/main/Preview/Preview_V3.jpg)
 
 Hotspot Remote est une application pour Smartphone sous Android qui permet de piloter les HotSpots prévus pour fonctionner sur les réseaux numériques radioamateurs suivants:
 

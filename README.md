@@ -22,20 +22,10 @@ L'application permet d'effectuer les actions suivantes :
 
 ## 2. Installation de l'application :
 
- 1. Copier le fichier **HotSPotRemote.js** dans le répertoire "root" du
-    HotSpot. Pour se faire, connectez-vous au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
- >      wget -O /root/HotSpotRemote.js https://github.com/f4bpp/HotSpot-Remote/releases/download/v2.0/HotSpotRemote.js
+ 1. Connectez-vous au HotSpot via ssh sous Linux (ssh root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
+ >      curl -fsSL https://raw.githubusercontent.com/f4bpp/HotSpot-Remote/main/Install/Install_HotSpotRemote.sh | bash
 
- 3. Éditer le fichier **rc.local** et ajouter les lignes suivantes :
-
->     #Lancement du HotSpot Remote au démarrage
->     nohup node /root/HotSpotRemote.js
-
- 4. Sauvegarder le fichier.
- 5. Afin rendre opérationnelle la lecture des bulletins METAR, connectez-vous au HotSpot via ssh sous Linux (ssh&nbsp;root@adresse_IP_du_HotSpot) ou via Putty sous Windows puis entrer la commande suivante :
->     curl -s https://raw.githubusercontent.com/f4bpp/HotSpot-Remote/main/METAR_Update/MetarInfo_Fix.sh | bash
- 6. Redémarrer le HotSpot.
- 7. Télécharger le fichier APK sur votre smartphone via ce lien : [HotSpot_Remote_APK](https://github.com/f4bpp/HotSpot-Remote/releases/download/v2.0/F4BPP_HotSpot_Remote_2.0.apk) ou bien en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
+ 2. Télécharger le fichier APK sur votre smartphone en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
 
 ![APK_QR-CODE](https://github.com/f4bpp/HotSpot-Remote/blob/main/Images/HotSpot_Remote_APK_QR-Code.png)
 

@@ -27,7 +27,7 @@ L'application permet d'effectuer les actions suivantes :
 
  2. Télécharger le fichier APK sur votre smartphone en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
 
-![APK_QR-CODE](https://github.com/f4bpp/HotSpot-Remote/blob/main/Install/F4BPP HotSpot Remote V3.png)
+![HotSpot Remote QR Code](https://github.com/f4bpp/HotSpot-Remote/blob/main/Install/F4BPP HotSpot Remote V3.png)
 
 ## 3. Réglages :
 

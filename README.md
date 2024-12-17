@@ -27,7 +27,7 @@ L'application permet d'effectuer les actions suivantes :
 
  2. Télécharger le fichier APK sur votre smartphone en scannant le QR Code ci dessous avec votre smartphone et lancez l'installation.
 
-![HotSpot Remote QR Code](https://github.com/f4bpp/HotSpot-Remote/blob/main/Install/QRCode_Setup_V3.png)
+![HotSpot Remote QR Code](https://github.com/f4bpp/HotSpot-Remote/blob/main/Install/QRCode_Setup_V2.png)
 
 Les utilisateurs de la version 2.0 peuvent passer directement à l'étape 2 car seule la partie Android a été mise à jour dans la version 3. Cependant, le nouveau script d'installation de la version 3.0 vérifie et corrige le cas échéant, deux fichiers sur le HotSpot afin de pouvoir effectuer la lecture du bulletin METAR avec une annonce correcte de l'heure du bulletin. Le script ne corrige que ce qui est nécessaire et s'abstient de toute modification si elles ne sont pas utiles. Enfin, si l'accès au RI49 France Multiprotocoles n'est pas activé, le script propose à l'utilisateur d'installer ce réflecteur afin de profiter pleinement de toutes les fonctionnalités de l'application.
 

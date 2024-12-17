@@ -38,25 +38,25 @@ done
 echo "Mise à jour de $RC_LOCAL_FILE terminée."
 
 # -----------------------------
-# 3. Vérification et installation du RI49
+# 3. Vérification et installation du RI49 France Multiprotocoles
 # -----------------------------
 RI49_FILE="/etc/spotnik/restart.ri49"
 if [ -f "$RI49_FILE" ]; then
-    echo "Le réflecteur RI49 est déjà installé."
+    echo "Le réflecteur RI49 France Multiprotocoles est déjà installé."
 else
     echo "Le réflecteur RI49 n'est pas installé."
     echo "Souhaitez-vous l'installer ? (o/n)"
     read -r choix
     if [ "$choix" = "o" ]; then
-        echo "Installation du réflecteur RI49..."
+        echo "Installation du réflecteur RI49 France Multiprotocoles..."
         curl -fs http://49.f4ipa.fr/extra/ri49.sh | bash
         if [ $? -eq 0 ]; then
-            echo "Réflecteur RI49 installé avec succès."
+            echo "Réflecteur RI49 France Multiprotocoles installé avec succès."
         else
-            echo "Échec de l'installation du réflecteur RI49."
+            echo "Échec de l'installation du réflecteur RI49 France Multiprotocoles."
         fi
     else
-        echo "Installation du réflecteur RI49 annulée."
+        echo "Installation du réflecteur RI49 France Multiprotocoles annulée."
     fi
 fi
 
@@ -119,3 +119,14 @@ fi
 # 6. Affichage du message final
 # -----------------------------
 echo "Installation de F4BPP HotSpot Remote terminée."
+
+# -----------------------------
+# 7. Redémarrage du Hotspot
+# -----------------------------
+echo "Le hotspot va être redémarré..."
+systemctl restart hotspot
+if [ $? -eq 0 ]; then
+    echo "Le Hotspot a été redémarré avec succès."
+else
+    echo "Erreur lors du redémarrage du Hotspot."
+fi

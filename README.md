@@ -2,7 +2,7 @@
 
 ## 1. Presentation de l'application :
 ![HotSpot Remote Preview](https://github.com/f4bpp/HotSpot-Remote/blob/main/Preview/Preview_V3.0.png)
-<div style="text-align: justify;">
+
 Hotspot Remote est une application pour Smartphone sous Android qui permet de piloter les HotSpots prévus pour fonctionner sur les réseaux numériques radioamateurs suivants:
 
  - Réseau des Répéteurs Francophones.
@@ -29,7 +29,7 @@ L'application permet d'effectuer les actions suivantes :
 
 ![HotSpot Remote QR Code](https://github.com/f4bpp/HotSpot-Remote/blob/main/Install/F4BPP_HotSpot_Remote_V3.png)
 
-Les utilisateurs de la version 2.0 peuvent passer directement à l'étape 2 car seule la partie Android a été mise à jour dans la version 3. Cependant, le nouveau script d'installation de la version 3.0 vérifie et corrige le cas échéant, deux fichiers sur le HotSpot afin de pouvoir effectuer la lecture du bulletin METAR avec une annonce correcte de l'heure du bulletin. Le script ne corrige que ce qui est nécessaire et s'abstient de toute modification si elles ne sont pas utiles. Enfin, si l'accès au RI49 France Multiprotocoles n'est pas activé, le script propose à l'utilisateur d'installer ce réflecteur afin de profiter pleinement de toutes les fonctionnalités de l'application.
+<div style="text-align: justify;">Les utilisateurs de la version 2.0 peuvent passer directement à l'étape 2 car seule la partie Android a été mise à jour dans la version 3. Cependant, le nouveau script d'installation de la version 3.0 vérifie et corrige le cas échéant, deux fichiers sur le HotSpot afin de pouvoir effectuer la lecture du bulletin METAR avec une annonce correcte de l'heure du bulletin. Le script ne corrige que ce qui est nécessaire et s'abstient de toute modification si elles ne sont pas utiles. Enfin, si l'accès au RI49 France Multiprotocoles n'est pas activé, le script propose à l'utilisateur d'installer ce réflecteur afin de profiter pleinement de toutes les fonctionnalités de l'application.</div>div>
 
 ## 3. Réglages :
 
@@ -60,4 +60,3 @@ Je tiens à remercier chaleureusement les personnes suivantes pour leur soutien,
 - Yannick (F5NKP)
 
 73, David (F4BPP).
-</div>

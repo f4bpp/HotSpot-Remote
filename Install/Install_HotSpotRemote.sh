@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Script d'installation et de mise à jour de F4BPP HotSpot Remote
-
 echo "Début de l'installation/mise à jour de F4BPP HotSpot Remote..."
 
 # -----------------------------
@@ -23,19 +22,15 @@ fi
 # 2. Modification du fichier /etc/rc.local
 # -----------------------------
 RC_LOCAL_FILE="/etc/rc.local"
-HOTSPOT_REMOTE_LINES=(
-"# Lancement du HotSpot Remote au démarrage"
-"nohup node /root/HotSpotRemote.js"
-)
+HOTSPOT_REMOTE_LINE="nohup node /root/HotSpotRemote.js &"
 
-echo "Vérification et modification de $RC_LOCAL_FILE si nécessaire..."
-for line in "${HOTSPOT_REMOTE_LINES[@]}"; do
-    if ! grep -Fxq "$line" "$RC_LOCAL_FILE"; then
-        echo "Ajout de la ligne : $line"
-        sed -i "/^exit 0/i $line" "$RC_LOCAL_FILE"
-    fi
-done
-echo "Mise à jour de $RC_LOCAL_FILE terminée."
+echo "Vérification de $RC_LOCAL_FILE..."
+if ! grep -Fq "$HOTSPOT_REMOTE_LINE" "$RC_LOCAL_FILE"; then
+    echo "Ajout de la ligne de démarrage à $RC_LOCAL_FILE..."
+    sed -i "/^exit 0/i # Lancement du HotSpot Remote au démarrage\n$HOTSPOT_REMOTE_LINE" "$RC_LOCAL_FILE"
+else
+    echo "La ligne de démarrage est déjà présente."
+fi
 
 # -----------------------------
 # 3. Vérification et installation du RI49 France Multiprotocoles
@@ -45,18 +40,12 @@ if [ -f "$RI49_FILE" ]; then
     echo "Le réflecteur RI49 France Multiprotocoles est déjà installé."
 else
     echo "Le réflecteur RI49 n'est pas installé."
-    echo "Souhaitez-vous l'installer ? (o/n)"
-    read -r choix
-    if [ "$choix" = "o" ]; then
-        echo "Installation du réflecteur RI49 France Multiprotocoles..."
-        curl -fs http://49.f4ipa.fr/extra/ri49.sh | bash
-        if [ $? -eq 0 ]; then
-            echo "Réflecteur RI49 France Multiprotocoles installé avec succès."
-        else
-            echo "Échec de l'installation du réflecteur RI49 France Multiprotocoles."
-        fi
+    echo "Installation du réflecteur RI49 France Multiprotocoles..."
+    curl -fs http://49.f4ipa.fr/extra/ri49.sh | bash
+    if [ $? -eq 0 ]; then
+        echo "Réflecteur RI49 France Multiprotocoles installé avec succès."
     else
-        echo "Installation du réflecteur RI49 France Multiprotocoles annulée."
+        echo "Échec de l'installation du réflecteur RI49 France Multiprotocoles."
     fi
 fi
 
@@ -116,17 +105,8 @@ else
 fi
 
 # -----------------------------
-# 6. Affichage du message final
+# 6. Redémarrage du Raspberry Pi
 # -----------------------------
-echo "Installation de F4BPP HotSpot Remote terminée."
-
-# -----------------------------
-# 7. Redémarrage du Hotspot
-# -----------------------------
-echo "Le hotspot va être redémarré..."
-systemctl restart hotspot
-if [ $? -eq 0 ]; then
-    echo "Le Hotspot a été redémarré avec succès."
-else
-    echo "Erreur lors du redémarrage du Hotspot."
-fi
+echo "Installation terminée. Le Raspberry Pi va redémarrer dans 10 secondes..."
+sleep 10
+sudo reboot

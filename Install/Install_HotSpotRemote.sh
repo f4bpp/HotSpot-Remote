@@ -59,10 +59,6 @@ METAR_INFO_FILE="/etc/spotnik/svxlink.d/ModuleMetarInfo.conf"
 # Lien attendu pour la ligne LINK=
 EXPECTED_LINK="/cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=metars&hoursBeforeNow=3&format=xml&mostRecent=true&stationString="
 
-# Lignes supplémentaires attendues
-EXPECTED_STARTDEFAULT="STARTDEFAULT=LFRO"
-EXPECTED_AIRPORTS="AIRPORTS=LFRO"
-
 echo "Vérification des modifications nécessaires dans $METAR_INFO_FILE..."
 
 # Vérifier si le fichier existe
@@ -74,22 +70,6 @@ if [ -f "$METAR_INFO_FILE" ]; then
         sed -i "s|^LINK=.*|LINK=\"$EXPECTED_LINK\"|" "$METAR_INFO_FILE"
     else
         echo "La ligne LINK= est déjà correcte."
-    fi
-
-    # Vérifier et corriger STARTDEFAULT
-    if ! grep -q "^$EXPECTED_STARTDEFAULT" "$METAR_INFO_FILE"; then
-        echo "Mise à jour de STARTDEFAULT..."
-        sed -i "s|^STARTDEFAULT=.*|$EXPECTED_STARTDEFAULT|" "$METAR_INFO_FILE"
-    else
-        echo "STARTDEFAULT est déjà correct."
-    fi
-
-    # Vérifier et corriger AIRPORTS
-    if ! grep -q "^$EXPECTED_AIRPORTS" "$METAR_INFO_FILE"; then
-        echo "Mise à jour de AIRPORTS..."
-        sed -i "s|^AIRPORTS=.*|$EXPECTED_AIRPORTS|" "$METAR_INFO_FILE"
-    else
-        echo "AIRPORTS est déjà correct."
     fi
 else
     echo "Fichier $METAR_INFO_FILE introuvable."

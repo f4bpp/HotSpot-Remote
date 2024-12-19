@@ -27,7 +27,7 @@ HOTSPOT_REMOTE_LINE="nohup node /root/HotSpotRemote.js &"
 echo "Vérification de $RC_LOCAL_FILE..."
 if ! grep -Fq "$HOTSPOT_REMOTE_LINE" "$RC_LOCAL_FILE"; then
     echo "Ajout de la ligne de démarrage à $RC_LOCAL_FILE..."
-    sed -i "/^exit 0/i # Lancement du HotSpot Remote au démarrage\n$HOTSPOT_REMOTE_LINE" "$RC_LOCAL_FILE"
+    sed -i "/^exit 0/i # Lancement du HotSpot Remote\n$HOTSPOT_REMOTE_LINE" "$RC_LOCAL_FILE"
 else
     echo "La ligne de démarrage est déjà présente."
 fi
@@ -58,20 +58,24 @@ NEW_LINK="/adds/dataserver_current/httpparam?dataSource=metars&requestType=retri
 
 echo "Vérification des modifications nécessaires dans $METAR_INFO_FILE..."
 if [ -f "$METAR_INFO_FILE" ]; then
-    if grep -q "$OLD_LINK" "$METAR_INFO_FILE"; then
-        echo "Ancien lien détecté. Remplacement par le nouveau lien..."
-        sed -i "s|$OLD_LINK|$NEW_LINK|" "$METAR_INFO_FILE"
-        echo "Lien mis à jour dans $METAR_INFO_FILE."
+    # Remplacement de la ligne LINK=
+    if grep -q "^LINK=" "$METAR_INFO_FILE"; then
+        echo "Remplacement de l'ancien lien dans la ligne LINK=..."
+        sed -i "s|^LINK=.*|LINK=\"$NEW_LINK\"|" "$METAR_INFO_FILE"
     else
-        echo "Le lien dans $METAR_INFO_FILE est déjà à jour."
+        echo "Ligne LINK= introuvable dans $METAR_INFO_FILE. Ajout de la ligne."
+        echo "LINK=\"$NEW_LINK\"" >> "$METAR_INFO_FILE"
     fi
 
-    if grep -q "STARTDEFAULT=LFOH" "$METAR_INFO_FILE"; then
-        echo "Modification de STARTDEFAULT et AIRPORTS pour LFRO..."
-        sed -i "s|STARTDEFAULT=LFOH|STARTDEFAULT=LFRO|" "$METAR_INFO_FILE"
-        sed -i "s|AIRPORTS=LFOH|AIRPORTS=LFRO|" "$METAR_INFO_FILE"
-    else
-        echo "Les paramètres STARTDEFAULT et AIRPORTS sont déjà à jour."
+    # Mise à jour des valeurs STARTDEFAULT et AIRPORTS
+    if grep -q "^STARTDEFAULT=LFOH" "$METAR_INFO_FILE"; then
+        echo "Modification de STARTDEFAULT pour LFRO..."
+        sed -i "s|^STARTDEFAULT=LFOH|STARTDEFAULT=LFRO|" "$METAR_INFO_FILE"
+    fi
+
+    if grep -q "^AIRPORTS=LFOH" "$METAR_INFO_FILE"; then
+        echo "Modification de AIRPORTS pour LFRO..."
+        sed -i "s|^AIRPORTS=LFOH|AIRPORTS=LFRO|" "$METAR_INFO_FILE"
     fi
 else
     echo "Fichier $METAR_INFO_FILE introuvable."

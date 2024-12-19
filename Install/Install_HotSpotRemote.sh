@@ -52,34 +52,51 @@ fi
 # -----------------------------
 # 4. Vérification et mise à jour du fichier ModuleMetarInfo.conf
 # -----------------------------
+
+# Fichier de configuration
 METAR_INFO_FILE="/etc/spotnik/svxlink.d/ModuleMetarInfo.conf"
-OLD_LINK="/cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=metars&hoursBeforeNow=3&format=xml&mostRecent=true&stationString="
-NEW_LINK="/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString="
+
+# Lien attendu pour la ligne LINK=
+EXPECTED_LINK="/cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=metars&hoursBeforeNow=3&format=xml&mostRecent=true&stationString="
+
+# Lignes supplémentaires attendues
+EXPECTED_STARTDEFAULT="STARTDEFAULT=LFRO"
+EXPECTED_AIRPORTS="AIRPORTS=LFRO"
 
 echo "Vérification des modifications nécessaires dans $METAR_INFO_FILE..."
+
+# Vérifier si le fichier existe
 if [ -f "$METAR_INFO_FILE" ]; then
-    # Remplacement de la ligne LINK=
-    if grep -q "^LINK=" "$METAR_INFO_FILE"; then
-        echo "Remplacement de l'ancien lien dans la ligne LINK=..."
-        sed -i "s|^LINK=.*|LINK=\"$NEW_LINK\"|" "$METAR_INFO_FILE"
+    # Comparer la ligne LINK= et la remplacer si elle est incorrecte
+    CURRENT_LINK=$(grep "^LINK=" "$METAR_INFO_FILE")
+    if [ "$CURRENT_LINK" != "LINK=\"$EXPECTED_LINK\"" ]; then
+        echo "La ligne LINK= est incorrecte, remplacement..."
+        sed -i "s|^LINK=.*|LINK=\"$EXPECTED_LINK\"|" "$METAR_INFO_FILE"
     else
-        echo "Ligne LINK= introuvable dans $METAR_INFO_FILE. Ajout de la ligne."
-        echo "LINK=\"$NEW_LINK\"" >> "$METAR_INFO_FILE"
+        echo "La ligne LINK= est déjà correcte."
     fi
 
-    # Mise à jour des valeurs STARTDEFAULT et AIRPORTS
-    if grep -q "^STARTDEFAULT=LFOH" "$METAR_INFO_FILE"; then
-        echo "Modification de STARTDEFAULT pour LFRO..."
-        sed -i "s|^STARTDEFAULT=LFOH|STARTDEFAULT=LFRO|" "$METAR_INFO_FILE"
+    # Vérifier et corriger STARTDEFAULT
+    if ! grep -q "^$EXPECTED_STARTDEFAULT" "$METAR_INFO_FILE"; then
+        echo "Mise à jour de STARTDEFAULT..."
+        sed -i "s|^STARTDEFAULT=.*|$EXPECTED_STARTDEFAULT|" "$METAR_INFO_FILE"
+    else
+        echo "STARTDEFAULT est déjà correct."
     fi
 
-    if grep -q "^AIRPORTS=LFOH" "$METAR_INFO_FILE"; then
-        echo "Modification de AIRPORTS pour LFRO..."
-        sed -i "s|^AIRPORTS=LFOH|AIRPORTS=LFRO|" "$METAR_INFO_FILE"
+    # Vérifier et corriger AIRPORTS
+    if ! grep -q "^$EXPECTED_AIRPORTS" "$METAR_INFO_FILE"; then
+        echo "Mise à jour de AIRPORTS..."
+        sed -i "s|^AIRPORTS=.*|$EXPECTED_AIRPORTS|" "$METAR_INFO_FILE"
+    else
+        echo "AIRPORTS est déjà correct."
     fi
 else
     echo "Fichier $METAR_INFO_FILE introuvable."
+    exit 1
 fi
+
+echo "Vérification et mise à jour du fichier ModuleMetarInfo.conf terminée."
 
 # -----------------------------
 # 5. Vérification et mise à jour du fichier MetarInfo.tcl

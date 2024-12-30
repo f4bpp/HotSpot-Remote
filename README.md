@@ -49,7 +49,6 @@ Cette application utilise une version modifiée du code Open Source développé 
 
 Je tiens à remercier chaleureusement les personnes suivantes pour leur soutien, leurs encouragements, leurs suggestions et leur contribution pour le développement de cette application :
 
-- Armel (F4HWN)
 - Rémy (F4JAJ)
 - Guillaume (F4IPA)
 - Maxime (F4HWD)
